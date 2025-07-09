@@ -7,7 +7,7 @@
 html, body {
   width: 100%;
   height: 100%;
-  font-family: 'Playfair Display', serif; /* Font untuk judul utama */
+  font-family: 'Playfair Display', serif; /* Font untuk judul utama dan sub-teks */
   background-image: url('https://raw.githubusercontent.com/ridhopryg/Sewabajupnk/main/Images/images%20(9).jpeg');
   background-size: cover;
   background-position: center;
@@ -57,23 +57,23 @@ html::before {
   color: #FFFFFF;
   font-size: 2.2rem; /* HP */
   font-weight: 700;
-  padding: 0 25px 10px; /* **DIUBAH**: Padding bawah untuk jarak ke sub-text */
+  padding-bottom: 10px; /* Jarak ke sub-text */
   letter-spacing: 0.1em;
   text-shadow: 0px 0px 15px rgba(0, 0, 0, 0.7),
                0px 0px 3px rgba(255, 255, 255, 0.2);
-  line-height: 1.2; /* Menyesuaikan line height jika perlu */
+  line-height: 1.2;
 }
 
 /* Styling untuk Sub-Teks */
 .sub-text {
-  color: #E0E0E0; /* Warna putih keabu-abuan untuk kontras lembut */
-  font-family: 'Outfit', sans-serif; /* Font yang lebih sederhana dan mudah dibaca */
-  font-size: 0.9em; /* Ukuran font relatif terhadap parent, disesuaikan untuk HP */
-  font-weight: 400; /* Normal weight */
-  padding: 0 25px; /* Padding samping agar tidak terlalu mepet */
-  letter-spacing: 0.05em; /* Sedikit letter-spacing agar tidak terlalu padat */
-  line-height: 1.5; /* Jarak antar baris */
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Bayangan lembut agar terbaca di gambar */
+  color: #FFFFFF; /* Warna menjadi putih sama dengan center-text */
+  font-family: 'Playfair Display', serif; /* Font sama dengan center-text */
+  font-size: 0.9em; /* Ukuran font relatif, bisa disesuaikan */
+  font-weight: 400; /* Atau bisa 700 jika ingin lebih tebal */
+  padding: 0; /* Reset padding */
+  letter-spacing: 0.05em; /* Sedikit letter-spacing */
+  line-height: 1.5;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Bayangan lembut agar terbaca */
 }
 
 /* Styling untuk Logo */
@@ -91,12 +91,11 @@ html::before {
 @media (min-width: 600px) {
   .center-text {
     font-size: 2.8rem;
-    padding: 0 35px 15px; /* Padding bawah lebih besar untuk tablet */
+    padding-bottom: 15px;
     letter-spacing: 0.12em;
   }
   .sub-text {
-    font-size: 1.1em; /* Ukuran font untuk tablet */
-    padding: 0 35px;
+    font-size: 1.1em;
     letter-spacing: 0.08em;
   }
   .logo {
@@ -110,12 +109,11 @@ html::before {
 @media (min-width: 1024px) {
   .center-text {
     font-size: 5.5rem;
-    padding: 0 50px 20px; /* Padding bawah lebih besar untuk desktop */
+    padding-bottom: 20px;
     letter-spacing: 0.15em;
   }
   .sub-text {
-    font-size: 1.3em; /* Ukuran font untuk desktop */
-    padding: 0 50px;
+    font-size: 1.3em;
     letter-spacing: 0.1em;
   }
   .logo {
