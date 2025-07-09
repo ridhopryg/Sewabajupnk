@@ -60,7 +60,7 @@ html, body {
 /* Overlay untuk “Move your mouse” */
 .overlay-mouse {
   position: fixed;
-  top: 47%;
+  top: 60%;
   left: 50%;
   transform: translateX(-50%);
   width: 300px;
