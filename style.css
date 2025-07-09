@@ -8,7 +8,7 @@ html, body {
   width: 100%;
   height: 100%;
   font-family: 'Playfair Display', serif;
-  background-image: url('https://raw.githubusercontent.com/ridhopryg/Sewabajupnk/main/Images/images%20(9).jpeg');
+  background-image: url('https://raw.githubusercontent.com/ridhopryg/Sewabajupnk/main/Images/images%20(9).jpeg'); /* Link gambar latar belakang Anda */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -17,18 +17,21 @@ html, body {
   align-items: center;
   position: relative;
   overflow: hidden;
-
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 1;
-  }
 }
+
+/* Overlay gelap untuk meningkatkan keterbacaan teks di atas gambar */
+/* **PERBAIKAN SINTAKS DI SINI** */
+html::before { /* Mengubah dari &::before menjadi html::before */
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Hitam 50% transparan, bisa disesuaikan */
+  z-index: 1;
+}
+
 
 /* Full clickable layer */
 .full-link {
@@ -41,7 +44,7 @@ html, body {
   text-decoration: none;
 }
 
-/* Teks Tengah */
+/* Teks Tengah - Default untuk HP (ukuran paling kecil) */
 .center-text {
   z-index: 3;
   color: #FFFFFF;
@@ -56,15 +59,12 @@ html, body {
 
 /* Styling untuk Logo */
 .logo {
-  position: absolute; /* Posisi relatif terhadap body/html */
-  top: 20px; /* Jarak dari atas */
-  left: 20px; /* Jarak dari kiri */
-  width: 150px; /* **Ukuran default untuk HP (bisa disesuaikan)** */
-  height: auto; /* Mempertahankan rasio aspek */
-  z-index: 5; /* Pastikan logo berada di paling depan */
-  /* Jika logo Anda memiliki background yang tidak transparan dan ingin menyatu,
-     pertimbangkan filter: drop-shadow() jika cocok dengan gaya Anda.
-     Atau pastikan logo sudah transparan. */
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 150px;
+  height: auto;
+  z-index: 5;
 }
 
 
@@ -76,7 +76,7 @@ html, body {
     letter-spacing: 0.12em;
   }
   .logo {
-    width: 180px; /* Ukuran logo untuk tablet */
+    width: 180px;
     top: 30px;
     left: 30px;
   }
@@ -90,7 +90,7 @@ html, body {
     letter-spacing: 0.15em;
   }
   .logo {
-    width: 220px; /* Ukuran logo untuk desktop */
+    width: 220px;
     top: 40px;
     left: 40px;
   }
