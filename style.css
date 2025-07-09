@@ -7,8 +7,9 @@
 html, body {
   width: 100%;
   height: 100%;
-  font-family: 'Outfit', sans-serif;
-  background-image: url('https://raw.githubusercontent.com/ridhopryg/Sewabajupnk/main/Images/images%20(9).jpeg'); /* Ganti ke link corak insang kamu jika ingin */
+  /* Menggunakan Playfair Display untuk font yang mewah dan megah */
+  font-family: 'Playfair Display', serif;
+  background-image: url('https://raw.githubusercontent.com/ridhopryg/Sewabajupnk/main/Images/images%20(9).jpeg'); /* Link gambar latar belakang Anda */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -17,6 +18,18 @@ html, body {
   align-items: center;
   position: relative;
   overflow: hidden;
+
+  /* Overlay gelap untuk meningkatkan keterbacaan teks di atas gambar */
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Hitam 50% transparan, bisa disesuaikan */
+    z-index: 1;
+  }
 }
 
 /* Full clickable layer */
@@ -26,23 +39,33 @@ html, body {
   height: 100%;
   top: 0;
   left: 0;
-  z-index: 2;
+  z-index: 4; /* Pastikan di atas overlay dan teks */
   text-decoration: none;
 }
 
 /* Teks Tengah */
 .center-text {
-  z-index: 3;
-  color: white;
-  font-size: 2.5rem;
-  font-weight: 700;
-  text-shadow: 0 0 10px rgba(255, 0, 255, 0.8);
+  z-index: 3; /* Pastikan di atas overlay */
+  /* Warna Teks: Putih bersih untuk kontras kuat */
+  color: #FFFFFF; /* Putih bersih */
+  font-size: 2.8rem;
+  font-weight: 700; /* Playfair Display terlihat bagus dengan bold */
   text-align: center;
   padding: 20px;
+  letter-spacing: 0.15em; /* Lebih lebar untuk kesan premium yang megah */
+
+  /* Text-shadow yang lebih elegan dan tidak menyakitkan mata */
+  /* Opsi 1: Bayangan lembut untuk kedalaman */
+  text-shadow: 0px 0px 15px rgba(0, 0, 0, 0.7), /* Bayangan hitam yang lebih kuat untuk kontras */
+               0px 0px 3px rgba(255, 255, 255, 0.2); /* Sedikit kilau putih */
+
+  /* Opsi 2: Sentuhan keemasan/perak (uncomment salah satu jika ingin mencoba) */
+  /* text-shadow: 0 0 10px rgba(255, 215, 0, 0.6), 0 0 20px rgba(255, 215, 0, 0.3); /* Emas lembut */
+  /* text-shadow: 0 0 10px rgba(192, 192, 192, 0.6), 0 0 20px rgba(192, 192, 192, 0.3); /* Perak lembut */
 }
 
 @media (min-width: 768px) {
   .center-text {
-    font-size: 4rem;
+    font-size: 4.8rem; /* Lebih besar untuk desktop, kesan lebih megah */
   }
 }
