@@ -43,29 +43,43 @@ html, body {
   text-decoration: none;
 }
 
-/* Teks Tengah */
+/* Teks Tengah - Default untuk HP (ukuran paling kecil) */
 .center-text {
   z-index: 3; /* Pastikan di atas overlay */
-  /* Warna Teks: Putih bersih untuk kontras kuat */
   color: #FFFFFF; /* Putih bersih */
-  font-size: 2.8rem;
-  font-weight: 700; /* Playfair Display terlihat bagus dengan bold */
+  font-size: 2.2rem; /* Ukuran font default untuk HP */
+  font-weight: 700;
   text-align: center;
-  padding: 20px;
-  letter-spacing: 0.15em; /* Lebih lebar untuk kesan premium yang megah */
+  /* Sesuaikan padding: top right bottom left */
+  padding: 15px 25px; /* **DIUBAH**: Menambah padding horizontal untuk memberi ruang di sisi kiri/kanan */
+  letter-spacing: 0.1em; /* **DIUBAH**: Sedikit mengurangi letter-spacing agar tidak terlalu lebar */
 
   /* Text-shadow yang lebih elegan dan tidak menyakitkan mata */
-  /* Opsi 1: Bayangan lembut untuk kedalaman */
-  text-shadow: 0px 0px 15px rgba(0, 0, 0, 0.7), /* Bayangan hitam yang lebih kuat untuk kontras */
-               0px 0px 3px rgba(255, 255, 255, 0.2); /* Sedikit kilau putih */
-
-  /* Opsi 2: Sentuhan keemasan/perak (uncomment salah satu jika ingin mencoba) */
-  /* text-shadow: 0 0 10px rgba(255, 215, 0, 0.6), 0 0 20px rgba(255, 215, 0, 0.3); /* Emas lembut */
-  /* text-shadow: 0 0 10px rgba(192, 192, 192, 0.6), 0 0 20px rgba(192, 192, 192, 0.3); /* Perak lembut */
+  text-shadow: 0px 0px 15px rgba(0, 0, 0, 0.7),
+               0px 0px 3px rgba(255, 255, 255, 0.2);
 }
 
-@media (min-width: 768px) {
+/* Media Query untuk Tablet (misalnya, lebar minimal 600px) */
+@media (min-width: 600px) {
   .center-text {
-    font-size: 4.8rem; /* Lebih besar untuk desktop, kesan lebih megah */
+    font-size: 2.8rem; /* Ukuran font untuk tablet */
+    padding: 20px 35px; /* **DIUBAH**: Menambah padding horizontal untuk tablet */
+    letter-spacing: 0.12em; /* Sedikit mengurangi letter-spacing untuk tablet */
   }
 }
+
+/* Media Query untuk Desktop (misalnya, lebar minimal 1024px) */
+@media (min-width: 1024px) {
+  .center-text {
+    font-size: 5.5rem; /* Ukuran font untuk desktop yang lebih besar */
+    padding: 30px 50px; /* **DIUBAH**: Menambah padding horizontal untuk desktop */
+    letter-spacing: 0.15em; /* Sedikit mengurangi letter-spacing untuk desktop */
+  }
+}
+
+/* Anda juga bisa menambahkan media query untuk layar yang sangat besar jika diperlukan */
+/* @media (min-width: 1440px) {
+  .center-text {
+    font-size: 6.5rem;
+  }
+} */
