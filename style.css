@@ -1,57 +1,72 @@
-body {
-  background-color: pink; /* Latar belakang HTML utama berwarna pink */
-  display: flex;
-  justify-content: center; /* Pusatkan konten secara horizontal */
-  align-items: center; /* Pusatkan konten secara vertikal */
-  min-height: 100vh;
+* {
   margin: 0;
-  overflow: hidden; /* Mencegah scrollbar jika elemen keluar batas */
-  position: relative; /* Diperlukan untuk penentuan posisi absolut anak-anak */
+  padding: 0;
+  box-sizing: border-box;
 }
 
-iframe {
-  position: absolute;
+html, body {
+  width: 100%;
+  height: 100%;
+  font-family: 'Outfit', sans-serif;
+  overflow: hidden;
+  position: relative;
+  background-color: black;
+}
+
+/* Background iframe */
+.background {
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
+  z-index: -1;
+}
+
+.background iframe {
+  width: 100%;
+  height: 100%;
   border: none;
-  z-index: 1; /* Iframe berada di belakang semua overlay */
 }
 
-/* Tulisan utama "SEWABAJUPNK.ID" diposisikan di tengah layar */
-.main-title-overlay {
-  position: absolute;
-  top: 50%; /* Sesuaikan posisi vertikal */
-  left: 50%;
-  transform: translate(-50%, -50%); /* Pusatkan horizontal dan vertikal */
-  color: black; /* Warna teks hitam agar kontras dengan latar belakang pink */
-  font-size: 5em; /* Sesuaikan ukuran teks sesuai kebutuhan */
-  font-family: 'Arial', sans-serif; /* Anda bisa mengubah font */
+/* Teks tengah */
+.center-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: white;
+  font-size: 3rem;
+  font-weight: 700;
   text-align: center;
-  z-index: 5; /* Pastikan teks ini berada di atas iframe */
-  text-shadow: 0 0 15px rgba(0, 0, 0, 0.5); /* Opsional: tambahkan efek bayangan untuk visibilitas */
-  white-space: nowrap; /* Mencegah teks melilit */
+  text-shadow: 0 0 10px rgba(255, 0, 255, 0.8);
+  z-index: 10;
+  position: relative;
 }
 
-/* Overlay untuk menyembunyikan "Built with Spline" */
-.spline-watermark-hide {
-  position: absolute;
-  bottom: 0; /* Sejajarkan ke kanan bawah */
-  right: 0;
-  width: 200px; /* Sesuaikan lebar untuk menutupi watermark */
-  height: 40px; /* Sesuaikan tinggi untuk menutupi watermark */
-  background-color: pink; /* Warna pink agar menyatu dengan latar belakang */
-  z-index: 6; /* Pastikan ini berada di atas segalanya */
+/* Overlay untuk "Move your mouse" */
+.overlay-mouse {
+  position: fixed;
+  top: 47%; /* Sudah pas sesuai permintaan */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 300px;
+  height: 40px;
+  background-color: black;
+  z-index: 5;
+  border-radius: 10px;
+  pointer-events: none;
 }
 
-/* Opsional: Sesuaikan untuk layar yang lebih kecil */
-@media (max-width: 768px) {
-  .main-title-overlay {
-    font-size: 3em; /* Ukuran font lebih kecil untuk seluler */
-  }
-  .spline-watermark-hide {
-    width: 150px; /* Sesuaikan untuk layar yang lebih kecil */
-    height: 30px;
-  }
+/* Overlay untuk "Built with Spline" */
+.overlay-spline {
+  position: fixed;
+  bottom: 12px;
+  right: 12px;
+  width: 170px;
+  height: 40px;
+  background-color: black;
+  z-index: 5;
+  border-radius: 10px;
+  pointer-events: none;
 }
