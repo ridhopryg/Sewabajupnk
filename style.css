@@ -1,4 +1,3 @@
-/* Reset dan dasar */
 * {
   margin: 0;
   padding: 0;
@@ -9,112 +8,41 @@ html, body {
   width: 100%;
   height: 100%;
   font-family: 'Outfit', sans-serif;
-  overflow: hidden;
-  background-color: black;
+  background-image: url('https://i.imgur.com/B9TfetY.jpeg'); /* Ganti ke link corak insang kamu jika ingin */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: relative;
+  overflow: hidden;
 }
 
-/* Klik seluruh layar */
+/* Full clickable layer */
 .full-link {
   position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
-  z-index: 100;
+  top: 0;
+  left: 0;
+  z-index: 2;
   text-decoration: none;
 }
 
-/* Background iframe */
-.background {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-}
-
-.background iframe {
-  width: 100%;
-  height: 100%;
-  border: none;
-}
-
-/* Teks utama */
+/* Teks Tengah */
 .center-text {
-  position: absolute;
-  top: 42%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  z-index: 3;
   color: white;
-  font-size: 3rem;
+  font-size: 2.5rem;
   font-weight: 700;
   text-shadow: 0 0 10px rgba(255, 0, 255, 0.8);
-  z-index: 10;
   text-align: center;
+  padding: 20px;
 }
 
-/* Overlay untuk "Move your mouse" */
-.overlay-mouse {
-  position: fixed;
-  top: 53%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 260px;
-  height: 40px;
-  background-color: black;
-  z-index: 5;
-  border-radius: 10px;
-  pointer-events: none;
-}
-
-/* Overlay untuk "Built with Spline" */
-.overlay-spline {
-  position: fixed;
-  bottom: 12px;
-  right: 12px;
-  width: 140px;
-  height: 40px;
-  background-color: black;
-  z-index: 5;
-  border-radius: 10px;
-  pointer-events: none;
-}
-
-/* Responsif tablet */
-@media (max-width: 1024px) {
+@media (min-width: 768px) {
   .center-text {
-    font-size: 2.5rem;
-    top: 42%;
-  }
-
-  .overlay-mouse {
-    width: 220px;
-    height: 35px;
-    top: 53%;
-  }
-
-  .overlay-spline {
-    width: 120px;
-    height: 30px;
-  }
-}
-
-/* Responsif HP */
-@media (max-width: 600px) {
-  .center-text {
-    font-size: 2rem;
-    top: 42%;
-  }
-
-  .overlay-mouse {
-    width: 180px;
-    height: 30px;
-  }
-
-  .overlay-spline {
-    width: 100px;
-    height: 28px;
+    font-size: 4rem;
   }
 }
