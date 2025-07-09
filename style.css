@@ -1,12 +1,12 @@
 body {
-  background-color: pink; /* Diubah menjadi pink */
+  background-color: pink; /* Latar belakang HTML utama berwarna pink */
   display: flex;
-  justify-content: center; /* Center content horizontally */
-  align-items: center; /* Center content vertically */
+  justify-content: center; /* Pusatkan konten secara horizontal */
+  align-items: center; /* Pusatkan konten secara vertikal */
   min-height: 100vh;
   margin: 0;
-  overflow: hidden; /* Prevent scrollbars if elements go out of bounds */
-  position: relative; /* Needed for absolute positioning of children */
+  overflow: hidden; /* Mencegah scrollbar jika elemen keluar batas */
+  position: relative; /* Diperlukan untuk penentuan posisi absolut anak-anak */
 }
 
 iframe {
@@ -16,59 +16,42 @@ iframe {
   width: 100%;
   height: 100%;
   border: none;
-  z-index: 1; /* Place iframe behind all overlays */
+  z-index: 1; /* Iframe berada di belakang semua overlay */
 }
 
-/* Overlay for the specific area where "Move your mouse" appears */
-.mouse-text-cover-overlay {
-  position: absolute;
-  top: 50%; /* Approximate vertical center of "move your mouse" */
-  left: 50%;
-  transform: translate(-50%, -50%); /* Center horizontally and vertically */
-  width: 350px; /* Adjust width to fully cover the text, make it wider if needed */
-  height: 80px; /* Adjust height to fully cover the text, make it taller if needed */
-  background-color: pink; /* Diubah menjadi pink agar menyatu dengan background */
-  z-index: 3; /* Place above iframe, but below your main title */
-  pointer-events: none; /* Allows clicks/interactions to pass through to iframe if desired */
-}
-
-/* Main title "SEWABAJUPNK.ID" now positioned on top of the pink cover */
+/* Tulisan utama "SEWABAJUPNK.ID" diposisikan di tengah layar */
 .main-title-overlay {
   position: absolute;
-  top: 50%; /* Should be the same as .mouse-text-cover-overlay */
+  top: 50%; /* Sesuaikan posisi vertikal */
   left: 50%;
-  transform: translate(-50%, -50%); /* Center horizontally and vertically */
-  color: black; /* Diubah menjadi hitam agar kontras dengan background pink */
-  font-size: 5em; /* Adjust text size as needed */
-  font-family: 'Arial', sans-serif; /* You can change the font */
+  transform: translate(-50%, -50%); /* Pusatkan horizontal dan vertikal */
+  color: black; /* Warna teks hitam agar kontras dengan latar belakang pink */
+  font-size: 5em; /* Sesuaikan ukuran teks sesuai kebutuhan */
+  font-family: 'Arial', sans-serif; /* Anda bisa mengubah font */
   text-align: center;
-  z-index: 5; /* Ensure it's above the pink cover and iframe */
-  text-shadow: 0 0 15px rgba(0, 0, 0, 0.5); /* Optional: add a stronger shadow effect for visibility */
-  white-space: nowrap; /* Prevent text from wrapping */
+  z-index: 5; /* Pastikan teks ini berada di atas iframe */
+  text-shadow: 0 0 15px rgba(0, 0, 0, 0.5); /* Opsional: tambahkan efek bayangan untuk visibilitas */
+  white-space: nowrap; /* Mencegah teks melilit */
 }
 
-/* Overlay to hide "Built with Spline" */
+/* Overlay untuk menyembunyikan "Built with Spline" */
 .spline-watermark-hide {
   position: absolute;
-  bottom: 0; /* Align to the bottom right */
+  bottom: 0; /* Sejajarkan ke kanan bawah */
   right: 0;
-  width: 200px; /* Adjust width to cover the watermark */
-  height: 40px; /* Adjust height to cover the watermark */
-  background-color: pink; /* Diubah menjadi pink agar menyatu dengan background */
-  z-index: 6; /* Ensure it's above everything */
+  width: 200px; /* Sesuaikan lebar untuk menutupi watermark */
+  height: 40px; /* Sesuaikan tinggi untuk menutupi watermark */
+  background-color: pink; /* Warna pink agar menyatu dengan latar belakang */
+  z-index: 6; /* Pastikan ini berada di atas segalanya */
 }
 
-/* Optional: Adjust for smaller screens */
+/* Opsional: Sesuaikan untuk layar yang lebih kecil */
 @media (max-width: 768px) {
   .main-title-overlay {
-    font-size: 3em; /* Smaller font size for mobile */
-  }
-  .mouse-text-cover-overlay {
-      width: 250px;
-      height: 60px;
+    font-size: 3em; /* Ukuran font lebih kecil untuk seluler */
   }
   .spline-watermark-hide {
-    width: 150px; /* Adjust for smaller screens */
+    width: 150px; /* Sesuaikan untuk layar yang lebih kecil */
     height: 30px;
   }
 }
