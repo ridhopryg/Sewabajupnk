@@ -1,3 +1,4 @@
+/* Reset dan dasar */
 * {
   margin: 0;
   padding: 0;
@@ -13,7 +14,7 @@ html, body {
   background-color: black;
 }
 
-/* Full clickable link */
+/* Klik ke seluruh layar */
 .full-link {
   display: block;
   width: 100%;
@@ -26,7 +27,7 @@ html, body {
   z-index: 100;
 }
 
-/* Background animasi */
+/* Latar belakang iframe animasi */
 .background {
   position: fixed;
   top: 0;
@@ -42,12 +43,13 @@ html, body {
   border: none;
 }
 
-/* Teks judul tengah */
+/* Teks utama di tengah */
 .center-text {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  padding-top: 12vh;     /* ⬅️ Naikkan teks ke atas */
+  height: auto;
   color: white;
   font-size: 3rem;
   font-weight: 700;
@@ -57,19 +59,47 @@ html, body {
   position: relative;
 }
 
-/* Overlay untuk “Move your mouse” */
+/* Overlay menyamarkan "Move your mouse" */
 .overlay-mouse {
   position: fixed;
-  top: 60%;
+  top: 47%;
   left: 50%;
-  transform: translateX(-50%);
-  width: 300px;
+  transform: translate(-50%, -50%);
+  width: 250px;
   height: 40px;
   background-color: black;
-  z-index: 5;
   border-radius: 10px;
+  z-index: 5;
   pointer-events: none;
 }
 
-/* Overlay untuk “Built with Spline” */
+/* Overlay menyamarkan "Built with Spline" */
 .overlay-spline {
+  position: fixed;
+  bottom: 12px;
+  right: 12px;
+  width: 140px;
+  height: 40px;
+  background-color: black;
+  border-radius: 10px;
+  z-index: 5;
+  pointer-events: none;
+}
+
+/* Responsif mobile */
+@media (max-width: 600px) {
+  .center-text {
+    font-size: 2rem;
+    padding-top: 10vh;
+  }
+
+  .overlay-mouse {
+    width: 180px;
+    height: 30px;
+  }
+
+  .overlay-spline {
+    width: 120px;
+    height: 30px;
+  }
+}
