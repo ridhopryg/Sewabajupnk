@@ -7,9 +7,8 @@
 html, body {
   width: 100%;
   height: 100%;
-  /* Menggunakan Playfair Display untuk font yang mewah dan megah */
   font-family: 'Playfair Display', serif;
-  background-image: url('https://raw.githubusercontent.com/ridhopryg/Sewabajupnk/main/Images/images%20(9).jpeg'); /* Link gambar latar belakang Anda */
+  background-image: url('https://raw.githubusercontent.com/ridhopryg/Sewabajupnk/main/Images/images%20(9).jpeg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -19,7 +18,6 @@ html, body {
   position: relative;
   overflow: hidden;
 
-  /* Overlay gelap untuk meningkatkan keterbacaan teks di atas gambar */
   &::before {
     content: '';
     position: absolute;
@@ -27,7 +25,7 @@ html, body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Hitam 50% transparan, bisa disesuaikan */
+    background-color: rgba(0, 0, 0, 0.5);
     z-index: 1;
   }
 }
@@ -39,47 +37,61 @@ html, body {
   height: 100%;
   top: 0;
   left: 0;
-  z-index: 4; /* Pastikan di atas overlay dan teks */
+  z-index: 4;
   text-decoration: none;
 }
 
-/* Teks Tengah - Default untuk HP (ukuran paling kecil) */
+/* Teks Tengah */
 .center-text {
-  z-index: 3; /* Pastikan di atas overlay */
-  color: #FFFFFF; /* Putih bersih */
-  font-size: 2.2rem; /* Ukuran font default untuk HP */
+  z-index: 3;
+  color: #FFFFFF;
+  font-size: 2.2rem;
   font-weight: 700;
   text-align: center;
-  /* Sesuaikan padding: top right bottom left */
-  padding: 15px 25px; /* **DIUBAH**: Menambah padding horizontal untuk memberi ruang di sisi kiri/kanan */
-  letter-spacing: 0.1em; /* **DIUBAH**: Sedikit mengurangi letter-spacing agar tidak terlalu lebar */
-
-  /* Text-shadow yang lebih elegan dan tidak menyakitkan mata */
+  padding: 15px 25px;
+  letter-spacing: 0.1em;
   text-shadow: 0px 0px 15px rgba(0, 0, 0, 0.7),
                0px 0px 3px rgba(255, 255, 255, 0.2);
 }
 
-/* Media Query untuk Tablet (misalnya, lebar minimal 600px) */
+/* Styling untuk Logo */
+.logo {
+  position: absolute; /* Posisi relatif terhadap body/html */
+  top: 20px; /* Jarak dari atas */
+  left: 20px; /* Jarak dari kiri */
+  width: 150px; /* **Ukuran default untuk HP (bisa disesuaikan)** */
+  height: auto; /* Mempertahankan rasio aspek */
+  z-index: 5; /* Pastikan logo berada di paling depan */
+  /* Jika logo Anda memiliki background yang tidak transparan dan ingin menyatu,
+     pertimbangkan filter: drop-shadow() jika cocok dengan gaya Anda.
+     Atau pastikan logo sudah transparan. */
+}
+
+
+/* Media Query untuk Tablet */
 @media (min-width: 600px) {
   .center-text {
-    font-size: 2.8rem; /* Ukuran font untuk tablet */
-    padding: 20px 35px; /* **DIUBAH**: Menambah padding horizontal untuk tablet */
-    letter-spacing: 0.12em; /* Sedikit mengurangi letter-spacing untuk tablet */
+    font-size: 2.8rem;
+    padding: 20px 35px;
+    letter-spacing: 0.12em;
+  }
+  .logo {
+    width: 180px; /* Ukuran logo untuk tablet */
+    top: 30px;
+    left: 30px;
   }
 }
 
-/* Media Query untuk Desktop (misalnya, lebar minimal 1024px) */
+/* Media Query untuk Desktop */
 @media (min-width: 1024px) {
   .center-text {
-    font-size: 5.5rem; /* Ukuran font untuk desktop yang lebih besar */
-    padding: 30px 50px; /* **DIUBAH**: Menambah padding horizontal untuk desktop */
-    letter-spacing: 0.15em; /* Sedikit mengurangi letter-spacing untuk desktop */
+    font-size: 5.5rem;
+    padding: 30px 50px;
+    letter-spacing: 0.15em;
+  }
+  .logo {
+    width: 220px; /* Ukuran logo untuk desktop */
+    top: 40px;
+    left: 40px;
   }
 }
-
-/* Anda juga bisa menambahkan media query untuk layar yang sangat besar jika diperlukan */
-/* @media (min-width: 1440px) {
-  .center-text {
-    font-size: 6.5rem;
-  }
-} */
