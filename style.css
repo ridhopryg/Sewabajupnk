@@ -7,31 +7,26 @@
 html, body {
   width: 100%;
   height: 100%;
-  font-family: 'Playfair Display', serif;
-  background-image: url('https://raw.githubusercontent.com/ridhopryg/Sewabajupnk/main/Images/images%20(9).jpeg'); /* Link gambar latar belakang Anda */
+  font-family: 'Playfair Display', serif; /* Font untuk judul utama */
+  background-image: url('https://raw.githubusercontent.com/ridhopryg/Sewabajupnk/main/Images/images%20(9).jpeg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   position: relative;
   overflow: hidden;
 }
 
-/* Overlay gelap untuk meningkatkan keterbacaan teks di atas gambar */
-/* **PERBAIKAN SINTAKS DI SINI** */
-html::before { /* Mengubah dari &::before menjadi html::before */
+/* Overlay gelap */
+html::before {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* Hitam 50% transparan, bisa disesuaikan */
+  background-color: rgba(0, 0, 0, 0.5);
   z-index: 1;
 }
-
 
 /* Full clickable layer */
 .full-link {
@@ -44,17 +39,41 @@ html::before { /* Mengubah dari &::before menjadi html::before */
   text-decoration: none;
 }
 
-/* Teks Tengah - Default untuk HP (ukuran paling kecil) */
+/* Kontainer untuk teks utama dan sub-teks */
+.content-wrapper {
+  display: flex;
+  flex-direction: column; /* Susun elemen secara vertikal */
+  justify-content: center;
+  align-items: center;
+  text-align: center; /* Pastikan teks di dalamnya rata tengah */
+  z-index: 3; /* Pastikan di atas overlay */
+  max-width: 90%; /* Batasi lebar agar tidak terlalu melebar di layar besar */
+  margin: 0 auto; /* Posisikan di tengah jika max-width diterapkan */
+}
+
+
+/* Teks Tengah Utama */
 .center-text {
-  z-index: 3;
   color: #FFFFFF;
-  font-size: 2.2rem;
+  font-size: 2.2rem; /* HP */
   font-weight: 700;
-  text-align: center;
-  padding: 15px 25px;
+  padding: 0 25px 10px; /* **DIUBAH**: Padding bawah untuk jarak ke sub-text */
   letter-spacing: 0.1em;
   text-shadow: 0px 0px 15px rgba(0, 0, 0, 0.7),
                0px 0px 3px rgba(255, 255, 255, 0.2);
+  line-height: 1.2; /* Menyesuaikan line height jika perlu */
+}
+
+/* Styling untuk Sub-Teks */
+.sub-text {
+  color: #E0E0E0; /* Warna putih keabu-abuan untuk kontras lembut */
+  font-family: 'Outfit', sans-serif; /* Font yang lebih sederhana dan mudah dibaca */
+  font-size: 0.9em; /* Ukuran font relatif terhadap parent, disesuaikan untuk HP */
+  font-weight: 400; /* Normal weight */
+  padding: 0 25px; /* Padding samping agar tidak terlalu mepet */
+  letter-spacing: 0.05em; /* Sedikit letter-spacing agar tidak terlalu padat */
+  line-height: 1.5; /* Jarak antar baris */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Bayangan lembut agar terbaca di gambar */
 }
 
 /* Styling untuk Logo */
@@ -62,7 +81,7 @@ html::before { /* Mengubah dari &::before menjadi html::before */
   position: absolute;
   top: 20px;
   left: 20px;
-  width: 150px;
+  width: 150px; /* HP */
   height: auto;
   z-index: 5;
 }
@@ -72,8 +91,13 @@ html::before { /* Mengubah dari &::before menjadi html::before */
 @media (min-width: 600px) {
   .center-text {
     font-size: 2.8rem;
-    padding: 20px 35px;
+    padding: 0 35px 15px; /* Padding bawah lebih besar untuk tablet */
     letter-spacing: 0.12em;
+  }
+  .sub-text {
+    font-size: 1.1em; /* Ukuran font untuk tablet */
+    padding: 0 35px;
+    letter-spacing: 0.08em;
   }
   .logo {
     width: 180px;
@@ -86,8 +110,13 @@ html::before { /* Mengubah dari &::before menjadi html::before */
 @media (min-width: 1024px) {
   .center-text {
     font-size: 5.5rem;
-    padding: 30px 50px;
+    padding: 0 50px 20px; /* Padding bawah lebih besar untuk desktop */
     letter-spacing: 0.15em;
+  }
+  .sub-text {
+    font-size: 1.3em; /* Ukuran font untuk desktop */
+    padding: 0 50px;
+    letter-spacing: 0.1em;
   }
   .logo {
     width: 220px;
